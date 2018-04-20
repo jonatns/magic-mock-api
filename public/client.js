@@ -1,6 +1,3 @@
-// client-side js
-// run by the browser each time your view template referencing it is loaded
-
 (function() {
   var codeEditorElem = document.getElementById("code-editor");
   var initialValue = {
@@ -13,11 +10,13 @@
       phone: "phone.phoneNumberFormat"
     }
   };
+
   var codeEditor = CodeMirror.fromTextArea(codeEditorElem, {
     lineNumbers: true,
     mode: CodeMirror.mimeModes["application/json"],
     theme: "oceanic-next"
   });
+
   codeEditor.setValue(JSON.stringify(initialValue, null, 2));
   codeEditor.setSize(500, 500);
 
@@ -26,6 +25,7 @@
     mode: CodeMirror.mimeModes["application/json"],
     theme: "oceanic-next"
   });
+
   responseEditor.setSize(500, 500);
   responseEditor.setValue("/*\n Response will appear here\n*/");
 
