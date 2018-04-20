@@ -1,6 +1,7 @@
 # Magic mock API
 
-## A magic mock API built using faker 🧙‍
+## A magic mock API built using faker 🧙‍ [Github](https://github.com/jonatns/magic-mock-api)
+
 
 It generates data based on a query. In order to generate data you need to send a stringified JSON as a data query parameter with following format:
 
