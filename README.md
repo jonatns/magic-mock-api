@@ -2,7 +2,7 @@
 
 ## A magic mock API built using faker 🧙‍
 
-It generates data based on a query. In order to generate data you need to send a JSON with following format:
+It generates data based on a query. In order to generate data you need to send a stringified JSON as a data query parameter with following format:
 
 ```json
 {
@@ -16,6 +16,8 @@ It generates data based on a query. In order to generate data you need to send a
   }
 }
 ```
+
+The query will look like this: /your-cool-pathname?data=stringifiedJSON
 
 * count: number of records you want to generate
 * fields: object containing all the fields you want to generate per record
