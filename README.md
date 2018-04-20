@@ -1,3 +1,3 @@
-Mock REST API
+# Magic mock API
 
-# A mock REST API built on json-server
+A magic mock API built using faker 🧙‍

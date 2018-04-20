@@ -7,18 +7,17 @@
   "description": "A simple REST API built on json-server",
   "main": "server.js",
   "scripts": {
-    "start": "json-server --watch db.json"
+    "start": "node server.js"
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "faker": "^4.1.0",
     "json-server": "^0.12.1"
   },
   "engines": {
     "node": "8.x"
   },
   "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "json-server"
-  ]
+  "keywords": ["node", "glitch", "json-server"]
 }
