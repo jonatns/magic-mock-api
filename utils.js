@@ -1,7 +1,7 @@
 const faker = require("faker");
 
 module.exports = {
-  stringDotNotationToFaker: str => {
+  stringDotNotationToFaker: (str) => {
     const val = str.split(".").reduce((accum, next) => {
       if (typeof accum[next] === "function") {
         return accum[next]();
@@ -15,5 +15,5 @@ module.exports = {
     }, faker);
 
     return val;
-  }
+  },
 };

@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const utils = require("./utils");
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(express.static("public"));
 app.use(bodyParser.json());
@@ -12,14 +13,14 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-app.get("*", (req, res) => {
+app.get("/mock", (req, res) => {
   try {
     const data = [];
     const queryData = JSON.parse(req.query.data);
 
     for (let i = 0; i < queryData.count; i++) {
       let record = {};
-      Object.getOwnPropertyNames(queryData.fields).forEach(field => {
+      Object.getOwnPropertyNames(queryData.fields).forEach((field) => {
         const val = utils.stringDotNotationToFaker(queryData.fields[field]);
         record = { ...record, ...{ [field]: val } };
       });
@@ -35,6 +36,6 @@ app.get("*", (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log("Server running...");
+app.listen(port, () => {
+  console.log(`Server running at port http://localhost:${port}...`);
 });

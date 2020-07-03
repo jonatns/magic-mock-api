@@ -1,4 +1,4 @@
-(function() {
+(function () {
   var codeEditorElem = document.getElementById("code-editor");
   var initialValue = {
     count: 2,
@@ -7,14 +7,14 @@
       firstName: "name.firstName",
       lastName: "name.lastName",
       email: "internet.email",
-      phone: "phone.phoneNumberFormat"
-    }
+      phone: "phone.phoneNumberFormat",
+    },
   };
 
   var codeEditor = CodeMirror.fromTextArea(codeEditorElem, {
     lineNumbers: true,
     mode: CodeMirror.mimeModes["application/json"],
-    theme: "oceanic-next"
+    theme: "oceanic-next",
   });
 
   codeEditor.setValue(JSON.stringify(initialValue, null, 2));
@@ -23,7 +23,7 @@
   var responseEditorElem = document.getElementById("response-editor");
   var responseEditor = CodeMirror.fromTextArea(responseEditorElem, {
     mode: CodeMirror.mimeModes["application/json"],
-    theme: "oceanic-next"
+    theme: "oceanic-next",
   });
 
   responseEditor.setSize(500, 500);
@@ -42,12 +42,12 @@
   }
 
   var fetchBtn = document.getElementById("fetch-btn");
-  fetchBtn.addEventListener("click", function() {
+  fetchBtn.addEventListener("click", function () {
     var payload = codeEditor.getValue();
 
     var request = new XMLHttpRequest();
     request.onload = setResponseResults;
-    request.open("get", "/users?data=" + payload);
+    request.open("get", "/mock?data=" + payload);
     request.send();
   });
 })();
